@@ -1,0 +1,133 @@
+/* About section*/
+
+.about .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 40px;
+}
+
+.about .text {
+    width: 50%;
+    color: white;
+}
+
+.video {
+    width: 50%;
+    height: 400px;
+    background-color: black;
+}
+
+@media (max-width:768px) {
+    .about .container {
+        flex-direction: column;
+        row-gap: 20px;
+        padding: 0 60px;
+    }
+
+    .about .text,
+    .video {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.about .text h1 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.about .text h2 {
+    color: var(--main-color);
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 10px 0 20px;
+}
+
+.about .text p {
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.video-thumb {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 15px 20px -10px rgb(0 0 0 / 50%);
+}
+
+.video-thumb video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.play-icon img {
+    display: block;
+    width: 100%;
+}
+
+.full-screen {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.full-screen .content {
+    position: relative;
+    width: fit-content;
+    height: 400px;
+}
+
+.full-screen .content i {
+    position: absolute;
+    right: 3%;
+    top: 3%;
+    color: white;
+    background-color: var(--main-color);
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.full-screen .content video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width:768px) {
+    .full-screen {
+        padding: 0 40px;
+    }
+
+    .full-screen .content {
+        height: 300px;
+        width: 100%;
+    }
+}

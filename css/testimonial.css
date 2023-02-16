@@ -1,0 +1,83 @@
+/* Testimonial section */
+.testimonial-content {
+    display: flex;
+    gap: 30px;
+}
+
+@media (max-width:768px) {
+    .testimonial-content {
+        flex-direction: column;
+    }
+}
+
+.test .text {
+    background: black;
+    margin-bottom: 20px;
+    border-radius: 5px 5px 5px 0;
+    position: relative;
+    padding: 20px;
+}
+
+.test .text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    border: 20px solid;
+    border-color: transparent transparent transparent black;
+}
+
+.test .text p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #ccc;
+}
+
+.test .text .stars {
+    position: relative;
+    z-index: 1;
+}
+
+.test .text .stars i {
+    color: yellow;
+    font-size: 12px;
+}
+
+.test .coord {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.test .coord .img {
+    width: 80px;
+    padding: 4px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--main-color);
+}
+
+.test .coord .img img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.test .coord .name {
+    flex: 1;
+}
+
+.test .coord .name h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #ccc;
+}
+
+.test .coord .name p {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #ccc;
+}

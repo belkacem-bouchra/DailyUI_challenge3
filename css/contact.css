@@ -1,0 +1,123 @@
+/* Contact section */
+
+.contact-content {
+    display: flex;
+    column-gap: 30px;
+}
+
+@media (max-width:768px) {
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.contact-content .coord {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 40%;
+}
+
+.contact-content .coord .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width:768px) {
+    .contact-content .coord {
+        align-items: center;
+    }
+
+    .contact-content .coord .info {
+        text-align: center;
+    }
+}
+
+.contact-content .coord .info h2 {
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.contact-content .coord .info p {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.contact-content .coord .info p i {
+    margin-right: 10px;
+    color: var(--main-color);
+}
+
+.contact-content .coord .map {
+    width: 100%;
+}
+
+.contact-content .coord .map img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-content .form {
+    width: 60%;
+    background-color: #111111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width:768px) {
+
+    .contact-content .coord,
+    .contact-content .form {
+        width: 100%;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+form input,
+form textarea {
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #ccc;
+    border-left: 3px solid var(--main-color);
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 16px;
+    color: var(--main-color);
+    font-weight: 300;
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--main-color);
+}
+
+::placeholder {
+    text-transform: capitalize;
+    font-size: 16px;
+}
+
+textarea {
+    resize: none;
+}
+
+form button {
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    width: fit-content;
+    padding: 10px 30px;
+}
