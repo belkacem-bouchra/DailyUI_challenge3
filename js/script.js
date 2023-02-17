@@ -27,6 +27,7 @@ for (i = 0; i < navLinks.length; i++) {
     navLinks[i].onclick = function () {
         currentNav = parseInt(this.getAttribute('nav-index'));
         navCheck();
+        console.log('current nav =' + currentNav)
     }
 }
 
@@ -36,9 +37,7 @@ function navCheck() {
     navMenu.style.right = '-80%';
     xmark.classList.add('hide');
     bars.classList.remove('hide');
-
     burger.classList.remove('click');
-
 }
 
 navCheck();
@@ -265,4 +264,45 @@ fullBody.onscroll = function () {
     }
 
 }
+let sections = Array.from(document.querySelectorAll('.section'));
 
+
+
+let
+    homeSect = document.getElementById('home'),
+    goUpButton = document.getElementById('go-up');
+
+let homeHeight = homeSect.offsetHeight,
+
+    homeH = homeHeight - 80;
+
+
+window.addEventListener('scroll', function () {
+    if (window.pageYOffset > homeH) {
+        goUpButton.classList.add('appear');
+        goUpButton.classList.remove('disappear');
+
+    }
+    if (window.pageYOffset == 0) {
+        goUpButton.classList.add('disappear');
+        goUpButton.classList.remove('appear');
+    }
+    var scrollPosition = document.documentElement.scrollTop;
+    sections.forEach(function (sect) {
+        if (scrollPosition >= sect.offsetTop - 80 && scrollPosition < sect.offsetTop + sect.offsetHeight) {
+            var currentSect = sect.attributes.id.value;
+            removeActiveNav();
+            addActiveClasse(currentSect);
+        }
+    })
+
+})
+
+goUpButton.addEventListener('click', function () {
+    window.scrollTo(0, 0)
+})
+
+var addActiveClasse = function (id) {
+    var selector = `ul a[href="#${id}"]`;
+    document.querySelector(selector).classList.add('active-nav');
+}
