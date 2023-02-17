@@ -154,6 +154,7 @@ nav ul li a::after {
 nav ul li a:hover,
 .active-nav {
     color: var(--main-color) !important;
+    font-weight: 600 !important;
 }
 
 nav ul li a:hover::before,
@@ -165,6 +166,6 @@ nav ul li a:hover::after {
 
     nav ul li a:hover,
     .active-nav {
-        color: white !important;
+        color: #ffffff !important;
     }
 }
